@@ -1,0 +1,93 @@
+<!DOCTYPE html5>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="Website">
+  <meta name="keywords" content="HTML,CSS,Bootstrap templates,JavaScript">
+  <meta name="author" content="Bony Roy">
+
+  <title>Search form</title>
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/checkout/">
+
+    <!-- Bootstrap core CSS -->
+  <link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+	<!-- Custom styles for this template -->
+    <link href="{{url_for('static', filename='css/main.css')}}" rel="stylesheet">
+	
+</head>
+<!-------->
+<body class="bg-info">
+    <form  class="form-signin" method="POST" action="/">
+    <div class="container border border-info rounded-lg bg-light">
+	
+    <div class="py-5 text-center">
+    <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='images/img1.png') }}" alt="" width="72" height="72">
+    <h4>Search form</h4>
+    <p><h6>Below is an input area for sentiment analysis of restaurant reviews. Please enter a valid text and click submit.</h6></p>
+    </div> 
+	
+    <div class="row">
+	      <div class="col-sm-3"></div>
+          <div class="py-5 col-lg-6 text-center">
+			<form method="POST" class="form-group" >
+			    <label for="text"><h4>Input textarea</h4></label>
+                <textarea class="form-control form-control-lg" rows="5" name="text" id="text" value="{{val1}}" required>{{val1}}</textarea>
+                <input type="submit" name="button_1">
+				<mark>{{value1}}</mark>
+			<img class="d-block mx-auto mb-4" src="{{user_image}}" width="{{w1}}" height="{{h1}}">
+			</form>
+			<form method="POST" class="form-group" action="{{url_for('form_details')}}">
+			<label for="item1"><h4>Food Joints</h4></label>
+            <select class="custom-select d-block w-400" id="item1" name="item1" required>
+              <option value={{request.form.item1}}>Choose...</option>
+              <option value="Starbucks" width="150px">Starbucks</option>
+			  <option value="McDonald's" width="150px">McDonald's</option>
+			  <option value="Taco Bell" width="150px">Taco Bell</option>
+			  <option value="Chipotle Mexican Grill" width="150px">Chipotle Mexican Grill</option>
+			  <option value="Nacho Daddy" width="150px">Nacho Daddy</option>
+			  <option value="The Cheesecake Factory" width="150px">The Cheesecake Factory</option>
+			  <option value="Burger King" width="150px">Burger King</option>
+			  <option value="Wendy's" width="150px">Wendy's</option>
+			  <option value="Subway" width="150px">Subway</option>
+			  <option value="Papa John's Pizza" width="150px">Papa John's Pizza</option>
+            </select>
+			<input type="submit" name="button_2">
+			</form>
+		</div>
+		  
+	</div>
+	
+	</div>
+    </form>
+	<div class="container-fluid">
+	<img  src="{{g1}}" class="img-fluid d-block mx-auto mb-4" >
+	<img  src="{{g2}}" class="img-fluid d-block mx-auto mb-4" >
+	<img  src="{{g3}}" class="img-fluid d-block mx-auto mb-4" >
+	<img  src="{{g6}}" class="img-fluid d-block mx-auto mb-4" >
+	<img  src="{{g7}}" class="img-fluid d-block mx-auto mb-4" >
+	<img  src="{{g8}}" class="img-fluid d-block mx-auto mb-4" >
+	</div>
+</body>
+
+</html>
